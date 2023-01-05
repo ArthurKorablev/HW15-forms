@@ -5,49 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <figure>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0_vCyhpFflAxnYCHvNUm5Tb57FIANG0PJ1w&usqp=CAU" alt="Butterfly">
-            <figcaption><button type="button">Buy</button></figcaption>
-        </figure>   
-    </div>
-    <div>
-        <form action="">
-            <label>Full name
-                <input type="text">
-            </label>
-            <label>City
-                <select name="select">
-                    <option value="kyiv">Kyiv</option>
-                    <option value="dnipro">Dnipro</option>
-                    <option value="odessa">Odessa</option>
-                    <option value="lviv">Lviv</option>
-                    <option value="kharkov">Kharkov</option>
-                </select>
-            </label>
-            <label>Storage number
-                <select name="select">
-                    <option value="12">12</option>
-                    <option value="3">3</option>
-                    <option value="94">94</option>
-                    <option value="18">18</option>
-                    <option value="65">65</option>
-                </select>
-            </label>
-            <label>Payment type
-                <input type="radio" name="pay" value="Credid card">
-                <input type="radio" name="pay" value="Cash on delivery">
-            </label>
-            <label>Quantity of product
-                <input type="number">
-            </label>
-            <label>Coment
-                <textarea name="coment" cols="30" rows="10"></textarea>
-            </label>
-            <button type="submit">Submit</button>
-        </form>
+    <div class="conteiner p-5">
+        <div class="d-grid gap-2 figContainer">
+            <figure class="mb-3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0_vCyhpFflAxnYCHvNUm5Tb57FIANG0PJ1w&usqp=CAU" class="mb-3" alt="Butterfly">
+                <figcaption ><button id="btnBuy" class="btn btn-primary" type="button">BUY</button></figcaption>
+            </figure>   
+        </div>
+    
+    <div class="page" hidden>
+        <form class="form-floating">
+            <input type="text" class="form-control mb-3" id="floatingInputValue">
+            <label for="floatingInputValue">Full Name</label>
+
+            <select class="form-select mb-3" aria-label="Default select example">
+                <option disabled selected>City</option>
+                <option value="kyiv">Kyiv</option>
+                <option value="dnipro">Dnipro</option>
+                <option value="odessa">Odessa</option>
+                <option value="kharkiv">Kharkiv</option>
+                <option value="lviv">Lviv</option>
+            </select>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Credid card
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Cash on delivery
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Quantity of product">
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Comments</label>
+                </div>
+                <div class="d-grid gap-2">
+                    <button id="btnSubmit" class="btn btn-primary" type="submit">Button</button>
+                </div>
+            </form>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
