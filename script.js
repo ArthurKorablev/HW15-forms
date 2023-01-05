@@ -33,24 +33,33 @@ function validation() {
 function output() {
     form.setAttribute('hidden', 'hidden');
     
+    const outputContainer = document.createElement('div');
     const mainDiv = document.createElement('div');
-    const name = document.createAttribute('div');
-    const location = document.createElement('div');
-    const quantityOfProduct = document.createElement('div');
+    const name = document.createElement('h2');
+    const location = document.createElement('p');
+    const quantityOfProduct = document.createElement('p');
 
     name.textContent = `${inputName.value}`;
     location.textContent = `City: ${city.value}`;
     quantityOfProduct.textContent = `Quantity: ${quantity.value}`;
 
+    name.classList.add('output');
+    location.classList.add('output');
+    quantityOfProduct.classList.add('output');
+
     mainDiv.append(name, location, quantityOfProduct);
 
     if (textarea.value != "") {
-        const coment = document.createElement('div');
+        const coment = document.createElement('p');
         coment.textContent = `${textarea.value}`;
+        coment.classList.add('output');
         mainDiv.append(coment);
     }
 
-    document.body.append(mainDiv);
+    mainDiv.classList.add('mainDiv');
+    outputContainer.append(mainDiv);
+    outputContainer.classList.add('outputContainer')
+    document.body.append(outputContainer);
 }
 
 btnBuy.addEventListener('click', function (e) {
@@ -62,8 +71,6 @@ btnBuy.addEventListener('click', function (e) {
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (validation(this)) {
-        // alert('форма проверена');
         output();
     }
-    console.log(validation(this));
-})
+});
